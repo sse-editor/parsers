@@ -1,0 +1,19 @@
+{
+  "name": "@sse-editor/parsers",
+  "version": "1.0.0",
+  "description": "HTML and Markdown Parser for SSE Editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sse-editor/parsers.git"
+  },
+  "author": "SSE World",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sse-editor/parsers/issues"
+  },
+  "homepage": "https://github.com/sse-editor/parsers#readme"
+}
