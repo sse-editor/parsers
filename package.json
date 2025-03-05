@@ -2,9 +2,16 @@
   "name": "@sse-editor/parsers",
   "version": "1.0.0",
   "description": "HTML and Markdown Parser for SSE Editor",
-  "main": "index.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc",
+    "clean": "rimraf dist types"
   },
   "repository": {
     "type": "git",
@@ -15,5 +22,18 @@
   "bugs": {
     "url": "https://github.com/sse-editor/parsers/issues"
   },
-  "homepage": "https://github.com/sse-editor/parsers#readme"
+  "homepage": "https://github.com/sse-editor/parsers#readme",
+  "devDependencies": {
+    "@sse-editor/types": "^1.1.0",
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.10",
+    "@vitejs/plugin-react": "^4.3.4",
+    "nanoid": "^5.1.2",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "ts-node": "^10.9.2"
+  }
 }
