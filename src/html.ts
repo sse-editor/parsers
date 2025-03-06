@@ -17,7 +17,7 @@ const parse = (
       return accumlator;
     }
 
-    const error = `[editorjs-html]: Parser function for ${block.type} does not exist`;
+    const error = `[@sse-editor/parsers]: Parser function for ${block.type} does not exist`;
     if (options.strict) {
       throw new Error(error);
     } else {
@@ -37,7 +37,7 @@ const parseBlock = (
     return parsers[block.type](block);
   }
 
-  const error = `[editorjs-html]: Parser function for ${block.type} does not exist`;
+  const error = `[@sse-editor/parsers]: Parser function for ${block.type} does not exist`;
   if (options.strict) {
     throw new Error(error);
   } else {

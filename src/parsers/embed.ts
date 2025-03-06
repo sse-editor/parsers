@@ -12,7 +12,7 @@ export const embed = ({ data }: OutputBlockData): string => {
   }
 
   console.error(
-    "[editorjs-html]: Only Youtube & Vimeo embeds are available by default. Write your own embed parser for other options."
+    "[@sse-editor/parsers]: Only Youtube & Vimeo embeds are available by default. Write your own embed parser for other options."
   );
   return "";
 };

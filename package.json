@@ -2,9 +2,9 @@
   "name": "@sse-editor/parsers",
   "version": "1.0.0",
   "description": "HTML and Markdown Parser for SSE Editor",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.mjs",
-  "types": "./types/index.d.ts",
+  "main": "./dist/html.umd.js",
+  "module": "./dist/html.mjs",
+  "types": "./types/html.d.ts",
   "files": [
     "dist",
     "types"
