@@ -19,7 +19,7 @@ jobs:
           node-version: 20
       - run: npm ci
 
-  publish-npm:
+  publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -40,6 +40,7 @@ jobs:
 
   release:
     name: Release
+    needs: publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
