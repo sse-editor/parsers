@@ -15,6 +15,7 @@ export default defineConfig({
       entry: path.resolve(process.cwd(), "src", "html.ts"),
       name: "HTML",
       fileName: "html",
+      formats: ["cjs", "es", "iife", "umd"]
     },
   },
   define: {

@@ -1,65 +1,19 @@
-import { parseCheckboxToMarkdown } from "./checkbox";
-import { parseCodeToMarkdown, parseMarkdownToCode } from "./code";
-import {
-  parseDelimiterToMarkdown,
-  parseMarkdownToDelimiter,
-} from "./delimiter";
-import { parseHeaderToMarkdown, parseMarkdownToHeader } from "./header";
-import { parseImageToMarkdown, parseMarkdownToImage } from "./image";
-import { parseListToMarkdown } from "./list";
+import { code } from "./code";
+import { embed } from "./embed";
+import { delimiter } from "./delimiter";
+import { header } from "./header";
+import { image } from "./image";
+import { list } from "./list";
+import { paragraph } from "./paragraph";
+import { quote } from "./quote";
 
 export default {
-  // code
-  code: {
-    md: {
-      parse: parseCodeToMarkdown,
-      import: parseMarkdownToCode,
-    },
-    html: {},
-  },
-
-  // checkbox
-  checkbox: {
-    md: {
-      parse: parseCheckboxToMarkdown,
-      // import :
-    },
-    html: {},
-  },
-
-  //delimiter
-  delimiter: {
-    md: {
-      parse: parseDelimiterToMarkdown,
-      import: parseMarkdownToDelimiter,
-    },
-    html: {},
-  },
-
-  // header
-  header: {
-    md: {
-      parse: parseHeaderToMarkdown,
-      import: parseMarkdownToHeader,
-    },
-    html: {},
-  },
-
-  // image
-  image: {
-    md: {
-      parse: parseImageToMarkdown,
-      import: parseMarkdownToImage,
-    },
-    html: {},
-  },
-
-  // list
-  list: {
-    md: {
-      parse: parseListToMarkdown,
-      // import:
-    },
-    html: {},
-  },
+  code: code,
+  embed: embed,
+  header: header,
+  image: image,
+  list: list,
+  paragraph: paragraph,
+  quote: quote,
+  delimiter: delimiter,
 };

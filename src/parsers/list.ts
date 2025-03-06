@@ -1,43 +1,19 @@
-import * as _ from "../utils/id";
-import { OutputBlockData } from "@sse-editor/types";
+import type { OutputBlockData } from "@sse-editor/types";
 
-type ListType = "unordered" | "ordered";
-// type List = OutputBlockData<{ style: ListType; items: string[] }>;
-type List = OutputBlockData<"list", { style: ListType; items: string[] }>;
+export const list = ({ data }: OutputBlockData) => {
+  const listStyle = data.style === "unordered" ? "ul" : "ol";
 
-export function parseListToMarkdown(blocks: List) {
-  let items = {};
-  switch (blocks.data.style) {
-    case "unordered":
-      items = blocks.data.items.map((item) => `* ${item}`);
-      return items;
-    case "ordered":
-      items = blocks.data.items.map((item, index) => `${index + 1} ${item}`);
-      return items;
-    default:
-      break;
-  }
-}
+  const recursor = (items: any, listStyle: string) => {
+    const list = items.map((item: any) => {
+      if (!item.content && !item.items) return `<li>${item}</li>`;
 
-// export function parseMarkdownToList(blocks: string) {
-//   let listData = {};
-//   const itemData: string[] = [];
+      let nestedList = "";
+      if (item.items?.length) nestedList = recursor(item.items, listStyle);
+      if (item.content) return `<li>${item.content}${nestedList}</li>`;
+    });
 
-//   blocks.children.forEach((items) => {
-//     items.children.forEach((listItem) => {
-//       listItem.children.forEach((listEntry) => {
-//         itemData.push(listEntry.value);
-//       });
-//     });
-//   });
+    return `<${listStyle}>${list.join("")}</${listStyle}>`;
+  };
 
-//   listData = {
-//     data: {
-//       items: itemData,
-//       style: blocks.ordered ? "ordered" : "unordered",
-//     },
-//     type: "list",
-//   };
-
-//   return listData;
-// }
+  return recursor(data.items, listStyle);
+};
