@@ -1,11 +1,14 @@
-import { OutputData } from "../types";
+import { OutputBlockData } from "@sse-editor/types";
 
 interface CheckboxItem {
   checked: boolean;
   text: string;
 }
 
-type CheckboxBlockJSON = OutputData<{ type: string; items: CheckboxItem[] }>;
+type CheckboxBlockJSON = OutputBlockData<
+  "checkbox",
+  { type: string; items: CheckboxItem[] }
+>;
 
 export function parseCheckboxToMarkdown(blocks: CheckboxBlockJSON[]): string {
   let items: string[] = [];

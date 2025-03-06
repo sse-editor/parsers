@@ -1,7 +1,7 @@
-import { OutputData } from "../types";
+import { OutputBlockData } from "@sse-editor/types";
 import * as _ from "../utils/id";
 
-type CodeBlockJSON = OutputData<{ code: string }>;
+type CodeBlockJSON = OutputBlockData<"code", { code: string }>;
 
 interface MarkdownBlock {
   value: string;

@@ -1,9 +1,12 @@
+import { OutputBlockData } from "@sse-editor/types";
 import * as _ from "../utils/id";
-import { OutputData } from "../types";
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6;
 type Alignment = "left" | "right" | "centre" | "justify";
-type Header = OutputData<{ level: Level; text: string; alignment?: Alignment }>;
+type Header = OutputBlockData<
+  "header",
+  { level: Level; text: string; alignment?: Alignment }
+>;
 
 export function parseHeaderToMarkdown(blocks: Header): string | undefined {
   const alignment = blocks.data.alignment || "left";

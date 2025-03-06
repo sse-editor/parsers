@@ -1,5 +1,0 @@
-export * from "./checkbox"
-export * from "./code"
-export * from "./delimiter"
-export * from "./header"
-export * from "./image"

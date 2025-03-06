@@ -1,7 +1,7 @@
+import { OutputBlockData } from "@sse-editor/types";
 import * as _ from "../utils/id";
-import { OutputData } from "../types";
 
-type Delimiter = OutputData<{ items: string[] }>;
+type Delimiter = OutputBlockData<"delimiter", { items: string[] }>;
 
 export function parseDelimiterToMarkdown() {
   const delimiter = "---";
